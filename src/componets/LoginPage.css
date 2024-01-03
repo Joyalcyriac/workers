@@ -1,0 +1,67 @@
+/* styles for the background */
+.background {
+    background-image: url('https://cdn.pixabay.com/photo/2022/11/30/20/25/mountains-7627600_1280.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* styles for the blur box */
+  .blur-box {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.5); /* Adjust the background opacity */
+    border-radius: 15px;
+    padding: 20px;
+    margin: 100px auto; /* Center the box horizontally */
+    width: 300px;
+    height: 250px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+  }
+  
+  /* styles for the login container */
+  .login-container {
+    text-align: center;
+  }
+  
+  /* styles for form elements */
+  input[type="text"],
+  input[type="password"],
+  button{
+    width: 70%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+button {
+    width: 30%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+button {
+    background-color: #03b7d6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+
+    position: absolute; /* Position the button relative to its containing block */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  h2{
+    color: rgb(143, 4, 223);
+  }
