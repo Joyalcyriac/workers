@@ -56,7 +56,7 @@
   }
   
   /* Align h1 to the left */
-  h1 {
+  .head {
     margin: 0;
   }
   

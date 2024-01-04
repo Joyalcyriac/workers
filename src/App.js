@@ -4,17 +4,20 @@ import { BrowserRouter as Router, Route,  Routes, BrowserRouter } from 'react-ro
 import Navigation from './componets/Navigation';
 import LoginPage from './componets/LoginPage';
 import Home from './componets/Home';
+import WorkerLoginForm from './componets/WorkersLoginForm';
 
 function App() {
   return (
     <div>
-        <BrowserRouter>
-      <Navigation/> {/* Your navigation component */}
+        {/* <BrowserRouter>
+      <Navigation/> 
       <Routes>
         <Route path="/" element={<Home method='post'/>} />
-        <Route path="/login" element={<LoginPage method='get'/>} />
+          <Route path="/login" element={<LoginPage method='get' />} />
+          <Route path="/workers" element={<WorkerLoginForm method='get'/>} />
         </Routes>
-    </BrowserRouter>
+    </BrowserRouter> */}
+      <WorkerLoginForm/>
     </div>
   );
 }
