@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Workers.css'
+
+
 const WorkerLoginForm = () => {
   const [inputs, setInputs] = useState({
     name: '',
@@ -20,15 +22,50 @@ const WorkerLoginForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Logic to handle form submission
-    console.log('Form submitted:', inputs);
+
+    try {
+      const formData = new FormData();
+      formData.append('name', inputs.name);
+      formData.append('contact', inputs.contact);
+      formData.append('experience', inputs.experience);
+      formData.append('education', inputs.education);
+      formData.append('professionalRole', inputs.professionalRole);
+      formData.append('skill', inputs.skill);
+      formData.append('overview', inputs.overview);
+      formData.append('resume', inputs.resume);
+
+      const response = await fetch('http://localhost:3001/submit-worker-form', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        console.log('Form submitted successfully');
+        // Optionally, reset form fields after successful submission
+        setInputs({
+          name: '',
+          contact: '',
+          experience: '',
+          education: '',
+          professionalRole: '',
+          skill: '',
+          overview: '',
+          resume: null,
+        });
+      } else {
+        console.error('Failed to submit form');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   };
+
 
     return (
       <div class="background">
-    <form onSubmit={handleSubmit} class='form-container'>
+    <form onSubmit={handleSubmit} className="form-container">
       <label>
         Name:
         <input type="text" name="name" value={inputs.name} onChange={handleChange} />
